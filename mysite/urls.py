@@ -19,7 +19,7 @@ from django.urls import path
 
 
 def home(request):
-    return JsonResponse("Prud pituh!")
+    return JsonResponse({"Prud": "pituh!"})
 
 
 urlpatterns = [
