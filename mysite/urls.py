@@ -14,15 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.http import JsonResponse
-from django.urls import path
+from django.urls import path, include
 
-
-def home(request):
-    return JsonResponse({"Prud": "pituh!"})
+from travel import templates
+from . import views
 
 
 urlpatterns = [
-    path("", home, name="home"),
+    path("", views.clock),
     path("admin/", admin.site.urls),
+    path(r'', include('travel.urls')),
+
 ]
